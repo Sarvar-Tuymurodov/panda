@@ -3,23 +3,16 @@
         :slides-per-view="1"
         :space-between="0"
         :autoplay="{
-            delay: 100000,
+            delay: 1000,
             disableOnInteraction: false,
         }"
         :modules="modules"
         class="carousel"
     >
-        <swiper-slide class="carousel__slide">
-            <img class="carousel__slide--bg" src="@/assets/img/carousel-1.png" alt="" />
+        :src="'src/assets/img/carousel-' + index + '.png'"
+        <swiper-slide v-for="index in 10" :key="index" class="carousel__slide">
+            <img class="carousel__slide--bg" :src="renderSrc(index)" alt="" />
         </swiper-slide>
-        <swiper-slide class="carousel__slide">
-            <img class="carousel__slide--bg" src="@/assets/img/carousel-1.png" alt="" />
-        </swiper-slide>
-        <swiper-slide class="carousel__slide">
-            <img class="carousel__slide--bg" src="@/assets/img/carousel-1.png" alt="" />
-        </swiper-slide>
-        <swiper-slide class="carousel__slide">Slide 2</swiper-slide>
-        <swiper-slide class="carousel__slide">Slide 3</swiper-slide>
     </swiper>
 </template>
 
@@ -33,6 +26,15 @@ import "swiper/css";
 // import required modules
 
 const modules = [Autoplay];
+
+const renderSrc = (index) => {
+    console.log("index", index);
+    const str = "/img/carousel-" + index + ".png";
+
+    console.log("src", str);
+
+    return str;
+};
 </script>
 
 <style lang="sass">
@@ -45,4 +47,7 @@ const modules = [Autoplay];
 
         display: flex
         justify-content: center
+
+        &--bg
+            max-width: 1600px
 </style>

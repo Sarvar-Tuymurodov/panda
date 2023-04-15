@@ -234,6 +234,8 @@ import CarouselImg from "@/components/carousel-img/CarouselImg.vue";
         transition: all .2s
         cursor: pointer
 
+
+
         &:hover
             box-shadow: rgba(255, 102, 0, 0.4) 0px 30px 70px -31px
 
@@ -266,6 +268,10 @@ import CarouselImg from "@/components/carousel-img/CarouselImg.vue";
 
         width: 100%
 
+        & img
+            animation: pulse 1.5s infinite ease
+            filter: drop-shadow(2px 2px 10px rgba(255, 0, 0, 0.4))
+
     &__body
         display: flex
         justify-content: space-around
@@ -275,6 +281,14 @@ import CarouselImg from "@/components/carousel-img/CarouselImg.vue";
 
         display: flex
         flex-direction: column
+
+        animation: bounce2 2s ease infinite
+
+        &:nth-child(2)
+            animation-delay: 200ms
+
+        &:nth-child(3)
+            animation-delay: 400ms
 
         &:last-child
             .goal__item--title
@@ -453,4 +467,23 @@ import CarouselImg from "@/components/carousel-img/CarouselImg.vue";
                     font-size: 20px
                     +intSemiBold()
                     color:#000000
+
+@keyframes pulse
+    0%
+        filter: drop-shadow(2px 2px 10px rgba(255, 0, 0, 0.4))
+
+    50%
+        filter: drop-shadow(4px 4px 50px rgba(255, 0, 0, 0.4))
+
+    100%
+        filter: drop-shadow(4px 4px 30px rgba(255, 0, 0, 0.4))
+
+
+@keyframes bounce2
+    0%, 20%, 50%, 80%, 100%
+        transform: translateY(0)
+    40%
+        transform: translateY(-20px)
+    60%
+        transform: translateY(-10px)
 </style>

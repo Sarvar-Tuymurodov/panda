@@ -25,10 +25,23 @@
                     </div>
                 </ul>
                 <div class="nav__lang">
-                    <select name="" id="">
-                        <option value="Ru">Ru</option>
-                        <option value="Uz">Uz</option>
-                    </select>
+                    <div class="nav__lang--main"
+                        >Ру
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="6"
+                            viewBox="0 0 12 6"
+                            fill="none"
+                        >
+                            <path
+                                d="M11 1L6.88384 4.91859C6.39773 5.38136 5.60227 5.38136 5.11616 4.91859L1 1"
+                                stroke="white"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            /></svg
+                    ></div>
                 </div>
                 <div class="nav__burger"></div>
             </div>
@@ -85,4 +98,17 @@
             &:hover
                 background-color: #FF6600
                 color: $color-white
+
+    &__lang
+        margin-left: 50px
+        cursor: pointer
+
+        &--main
+            display: flex
+            align-items: center
+            font-size: 30px
+            color: $color-white
+
+            & svg
+                margin-left: 10px
 </style>
